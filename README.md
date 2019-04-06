@@ -2,6 +2,10 @@
 
 HH Job Parser is a Python script that parse resumes by search request links
 
+## Dependencies
+- requests
+- beautifulsoup4
+
 ## Usage
 To get resumes urls use `job_parser.py`. Just fill `jobs` list at the begining of the file. The result is a `.txt` file
 in `resume_lists` dir, named `JobName_urls.txt`
