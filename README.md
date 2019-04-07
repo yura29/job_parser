@@ -16,4 +16,9 @@ To parse this urls use `parse_urls.py` with following params:
 - -j job name
 The result is banch of `.json` files in `output_dir/job_name/` dir
 
+Example
+
+`$ python parse_urls.py -i ./resume_lists/Бортпроводник_urls.txt -o ./res -j Бортпроводник`
+
+
 ### Have fun
