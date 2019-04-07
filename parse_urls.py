@@ -166,9 +166,11 @@ for input_path in args.i:
         for link in input:
             link = link[:-1]
             id = link.replace('https://hh.ru/resume/', '')
-            res = parse_resume(link, args.j)
-            with open('{0}/{1}.json'.format(dir_path, id), 'w', encoding='utf8') as f:
-                json.dump(res, f, ensure_ascii=False, indent=4)
-            printProgressBar(i + 1, total_urls, prefix='Progress:', suffix='Complete', length=progress_bar_len)
+            target_path = '{0}/{1}.json'.format(dir_path, id)
+            if not os.path.exists(target_path):
+                res = parse_resume(link, args.j)
+                with open(target_path, 'w', encoding='utf8') as f:
+                    json.dump(res, f, ensure_ascii=False, indent=4)
             i += 1
+            printProgressBar(i, total_urls, prefix='Progress:', suffix='Complete', length=progress_bar_len)
 
